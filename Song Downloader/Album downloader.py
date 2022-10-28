@@ -6,18 +6,17 @@ import shutil
 import urllib.request
 import time
 
-
+downpath="Enter Download Path
 name=input("Enter Movie Name: ")
-os.chdir("C:\\Users\\Shashank\\Desktop\\")
+os.chdir(downpath)
 if(os.path.exists(name)):
     shutil.rmtree(name)
 os.mkdir(name)
-os.chdir("C:\\Users\\Shashank\\Desktop\\"+ name + "\\")
+os.chdir(downpath + name + "\\")
 quer=name.replace(" ", "+")
 yearr=requests.get('https://www.imdb.com/find?q=' + quer +'&ref_=nv_sr_sm')
 soup=BeautifulSoup(yearr.content, 'html.parser')
 soup.prettify()
-print("Movie Year Found: ", end="")
 count=0
 for i in soup.find_all('td', class_='result_text'):
     if(count == 0):
@@ -124,7 +123,7 @@ else:
     print('Not Found')
     os.remove(name +'-list.txt')
     os.remove(name +'-pages.txt')
-    os.chdir('C:\\Users\\Shashank\\Desktop\\')
-if len(os.listdir('C:\\Users\\Shashank\\Desktop\\'+ name) ) == 0:
+    os.chdir(downpath)
+if len(os.listdir(downpath+ name) ) == 0:
     os.rmdir(name)
 file.close()
