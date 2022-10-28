@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.common.keys import Keys  
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-os.chdir("C://Users/Shashank/Desktop/")
+os.chdir("Download Path")
 
 nam=input("Enter Song Name: ")
 name=nam.replace(" ", "+")
@@ -28,7 +28,7 @@ for rt in soup.find_all('a'):
             c+=1
 options=Options()
 options.headless=True
-s=Service("D:\chromedriver.exe")
+s=Service("ChromeDriverPath")
 driver = webdriver.Chrome(service=s,options=options) 
 driver.get(song)
 time.sleep(7)
