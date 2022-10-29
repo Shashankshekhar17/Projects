@@ -3,12 +3,13 @@ import time
 import re
 import requests
 import os
+from os import startfile
 import urllib.request
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.keys import Keys  
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-os.chdir("Download Path")
+os.chdir("C://Users/Shashank/Desktop/")
 
 nam=input("Enter Song Name: ")
 name=nam.replace(" ", "+")
@@ -28,7 +29,7 @@ for rt in soup.find_all('a'):
             c+=1
 options=Options()
 options.headless=True
-s=Service("ChromeDriverPath")
+s=Service("D:\chromedriver.exe")
 driver = webdriver.Chrome(service=s,options=options) 
 driver.get(song)
 time.sleep(7)
@@ -43,3 +44,10 @@ if 'converter' in w:
     print("Completed")
 else:
     print("Sorry this song cannot be downloaded")
+
+opt=input("Do you want to play the song [Y/N]: ").upper()
+if(opt=="Y"):
+    queue=nam.title()+'.mp4'
+    startfile(queue)
+else:
+    print("See You Again!!")
