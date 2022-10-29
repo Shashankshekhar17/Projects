@@ -44,12 +44,11 @@ if 'converter' in w:
     print("Downloading....Please Wait")
     urllib.request.urlretrieve(link,nam.title()+'.mp4')
     print("Completed")
+    opt=input("Do you want to play the song [Y/N]: ").upper()
+    if(opt=="Y"):
+        queue=nam.title()+'.mp4'
+        startfile(queue)
+    else:
+        print("See You Again!!")
 else:
     print("Sorry this song cannot be downloaded")
-
-opt=input("Do you want to play the song [Y/N]: ").upper()
-if(opt=="Y"):
-    queue=nam.title()+'.mp4'
-    startfile(queue)
-else:
-    print("See You Again!!")
