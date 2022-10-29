@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
-downpath=input("Enter Download Path: )
+downpath=input("Enter Download Path: ")
 os.chdir(downpath)
 
 nam=input("Enter Song Name: ")
