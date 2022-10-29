@@ -9,7 +9,9 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.common.keys import Keys  
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-os.chdir("C://Users/Shashank/Desktop/")
+
+downpath=input("Enter Download Path: )
+os.chdir(downpath)
 
 nam=input("Enter Song Name: ")
 name=nam.replace(" ", "+")
